@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class BMW7Test {
+public class BMW7Test extends TestBeforeClassAnnotation {
 
 
 
@@ -63,9 +63,10 @@ public class BMW7Test {
 
         assertTrue (testBMW instanceof BMW7);
 
-
-
     }
+
+
+
 
 
 
