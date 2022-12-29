@@ -10,7 +10,7 @@ public class BMW7Test {
 
 
     //Test constructor: model
-    @Test
+    @Test(groups = "Positive")
     public void testConstrModel() {
 
         BMW7 testBMW = new BMW7("BMW 745i", 250,
@@ -21,7 +21,7 @@ public class BMW7Test {
     }
 
     //Test constructor: maxSpeed
-    @Test
+    @Test(groups = "Positive")
     public void testConstrMaxSpeed() {
 
         BMW7 testBMW = new BMW7("BMW 745i", 250,
@@ -32,7 +32,7 @@ public class BMW7Test {
     }
 
     //Test constructor: Horse Power
-    @Test
+    @Test(groups = "Positive")
     public void testConstrHorsePower() {
 
         BMW7 testBMW = new BMW7("BMW 745i", 250,
@@ -43,13 +43,27 @@ public class BMW7Test {
     }
 
     //Test constructor: Torque
-    @Test
+    @Test(groups = "Positive")
     public void testConstrTorque() {
 
         BMW7 testBMW = new BMW7("BMW 745i", 250,
                 333, 450);
 
         assertEquals(testBMW.getTorque(), 450 );
+
+    }
+
+
+    //Test Param Method InstantOf BMW7 Class
+    @Test(groups = "Positive")
+    public void testParamMethodInstantOfBMW7Class(){
+
+        BMW7 testBMW = new BMW7("BMW 745i", 250,
+                333, 450);
+
+        assertTrue (testBMW instanceof BMW7);
+
+
 
     }
 
