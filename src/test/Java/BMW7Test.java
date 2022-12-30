@@ -36,7 +36,7 @@ public class BMW7Test extends TestPreparationBeforeAfterTesting {
     }
 
 
-    //Test constructor: model
+    //Test constructor: model Not Equals
     @Test
     public void testConstrModelNotEquals() {
 
@@ -119,6 +119,64 @@ public class BMW7Test extends TestPreparationBeforeAfterTesting {
         if (result !=251){
             fail("Not exactly 250");
         }
+
+    }
+
+
+    //NEGATIVE TESTS
+
+    //Test negative spec simbol constructor: model
+    @Test(groups = "Negative")
+    public void testConstrModel1() {
+
+        BMW7 testBMW = new BMW7("!@#$%^&*()_{}[]<>", 250,
+                333, 450);
+
+        assertEquals(testBMW.getModel(), "!@#$%^&*()_{}[]<>" );
+
+    }
+
+    //Test negative empty space constructor: model
+    @Test(groups = "Negative")
+    public void testConstrModel2() {
+
+        BMW7 testBMW = new BMW7("", 250,
+                333, 450);
+
+        assertEquals(testBMW.getModel(), "" );
+
+    }
+
+    //Test negative whiteSpace constructor: model
+    @Test(groups = "Negative")
+    public void testConstrModel3() {
+
+        BMW7 testBMW = new BMW7(" ", 250,
+                333, 450);
+
+        assertEquals(testBMW.getModel(), " " );
+
+    }
+
+    //Test negative spaces at the beginning, middle, end constructor: model
+    @Test(groups = "Negative")
+    public void testConstrModel4() {
+
+        BMW7 testBMW = new BMW7(" v B ", 250,
+                333, 450);
+
+        assertEquals(testBMW.getModel(), " v B " );
+
+    }
+
+    //Test negative numbers vs symbols constructor: model
+    @Test(groups = "Negative")
+    public void testConstrModel5() {
+
+        BMW7 testBMW = new BMW7("234bnm2m5h3g", 250,
+                333, 450);
+
+        assertEquals(testBMW.getModel(), "234bnm2m5h3g" );
 
     }
 
