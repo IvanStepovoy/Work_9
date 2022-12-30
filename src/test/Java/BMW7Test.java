@@ -48,8 +48,6 @@ public class BMW7Test extends TestPreparationBeforeAfterTesting {
     }
 
 
-
-
     //Test constructor: maxSpeed
     @Test(groups = "Positive", timeOut = 5000)
     public void testConstrMaxSpeed() {
@@ -97,9 +95,6 @@ public class BMW7Test extends TestPreparationBeforeAfterTesting {
 
 
 
-
-
-
     //Test Param Method InstantOf BMW7 Class enabled = false
     @Test(enabled = false)
     public void test1ParamMethodInstantOfBMW7Class(){
@@ -110,19 +105,23 @@ public class BMW7Test extends TestPreparationBeforeAfterTesting {
         assertTrue (testBMW instanceof BMW7);
 
     }
-
-/*
+    //Failure of the test
     @Test
-    public void divideWithFractionalResult() {
-        double result = MathClass.divide(10,4);
-        assertEquals(result,2);
-        System.out.println("2");
-        if (result !=5){
-            fail("Not exactly 5");
+    public void FailureOfTheTest() {
+
+        BMW7 testBMW = new BMW7("BMW 745i", 250,
+                333, 450);
+
+        int result = testBMW.getMaxSpeed() ;
+        assertEquals(result,250);
+        System.out.println("Failure of the test");
+
+        if (result !=251){
+            fail("Not exactly 250");
         }
 
     }
-*/
+
 
 
 
