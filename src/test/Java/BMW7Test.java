@@ -36,6 +36,19 @@ public class BMW7Test extends TestPreparationBeforeAfterTesting {
     }
 
 
+    //Test constructor: model
+    @Test
+    public void testConstrModelNotEquals() {
+
+        BMW7 testBMW = new BMW7("BMW 745", 250,
+                333, 450);
+
+        assertNotEquals(testBMW.getModel(), "BMW 745i" );
+
+    }
+
+
+
 
     //Test constructor: maxSpeed
     @Test(groups = "Positive", timeOut = 5000)
@@ -98,9 +111,18 @@ public class BMW7Test extends TestPreparationBeforeAfterTesting {
 
     }
 
+/*
+    @Test
+    public void divideWithFractionalResult() {
+        double result = MathClass.divide(10,4);
+        assertEquals(result,2);
+        System.out.println("2");
+        if (result !=5){
+            fail("Not exactly 5");
+        }
 
-
-
+    }
+*/
 
 
 
